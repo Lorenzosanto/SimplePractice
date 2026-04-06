@@ -1,22 +1,130 @@
 
-.titulo {
-    text-align: center;
-    -webkit-text-fill-color: blue;}
-.rolodetexto {
-    text-align: justify;
-    font-size: 15px;
-    line-height: 20px;
-    margin: 20px;
-    height: 300px;
-    overflow-y: scroll;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4facfe, #8e44ad);
 }
-.botao{
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #0177f6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;}
+
+
+header {
+  background: linear-gradient(90deg, #4facfe, #8e44ad);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.container {
+  display: flex;
+}
+
+
+.menu {
+  width: 250px;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+
+.menu a {
+  display: block;
+  background: linear-gradient(45deg, #6a5acd, #00bfff);
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #a29bfe;
+}
+
+
+.conteudo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+
+.card {
+  background: #F7FFF3;
+  max-width: 800px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.modo-botao a {
+  background: linear-gradient(45deg, #6a5acd, #00bfff);
+  color: white;
+  text-decoration: none;
+}
+
+
+.modo-link a {
+  background: transparent;
+  color: #1e90ff;
+  text-decoration: underline;
+}
+
+
+.modo-box {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.modo-box a {
+  color: black;
+  text-decoration: none;
+}
+
+
+.proximo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #6a5acd, #00bfff);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.proximo:hover {
+  background: #a29bfe;
+}
+
+/* ===================== */
+/* 🟢 TELA 1 (Gui) */
+/* ===================== */
+
+.titulo {
+  text-align: center;
+  color: blue; /* já corrigi o -webkit lixo */
+}
+
+.rolodetexto {
+  text-align: justify;
+  font-size: 15px;
+  margin: 20px;
+}
+
+.botao {
+  display: block;
+  margin: 20px auto;
+  background: #0177f6;
+}
