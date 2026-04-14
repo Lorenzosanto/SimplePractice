@@ -6,25 +6,32 @@
     <link rel="stylesheet" href="../assets/CSS/style.css">
 </head>
 <body>
-    <h1 class="titulo">Informações Pessoais</h1>
-    
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required maxlength="60">
-        <br><br>
-        
-        <label for="ddn">Data de Nascimento:</label>
-        <input type="date" id="ddn" name="ddn" required>
-        <br><br>
-        
-        <label for="acordar">Hora que acorda:</label>
-        <input type="time" id="acordar" name="acordar" required>
-        <br><br>
-        
-        <button type="submit">Enviar</button>
-    </form>
 
-        <button><a href="tela3.html">Ir para a Tela 3</a></button>
+    <div class="form-container">
+        <h1 class="titulo">Informações Pessoais</h1>
+
+        <form class="formulario">
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required maxlength="60">
+            </div>
+
+            <div class="campo">
+                <label for="ddn">Data de Nascimento:</label>
+                <input type="date" id="ddn" name="ddn" required>
+            </div>
+
+            <div class="campo">
+                <label for="acordar">Hora que acorda:</label>
+                <input type="time" id="acordar" name="acordar" required>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </div>
+
+    <a href="tela1.html" class="voltar">← Voltar</a> 
+    <a href="tela3.html" class="proximo">Próxima etapa →</a>
 
 </body>
 </html>
