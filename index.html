@@ -1,75 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Procrastinação</title>
-  <link rel="stylesheet" href="Public/assets/CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procrastinação - Entenda e Vença</title>
+    <link rel="stylesheet" href="Public/assets/CSS/style.css">
 </head>
-<body>
+<body data-page="inicio" data-root-prefix="" data-config="Public/assets/data/site.json">
+    <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="pageDrawer">
+        <span class="menu-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="menu-toggle__text">Páginas</span>
+    </button>
 
-  <!-- TOPO -->
-  <header>
-    <h1>A Procrastinação</h1>
-  </header>
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
 
-  <div class="container">
+    <aside class="page-drawer" id="pageDrawer" aria-label="Navegação entre páginas">
+        <div class="page-drawer__brand">
+            <p class="page-drawer__eyebrow">SimplePractice</p>
+            <h2 id="brandTitle">ProcrastiNÃO</h2>
+            <p class="page-drawer__description">Conteúdo sobre procrastinação em HTML5, CSS puro e JavaScript vanilla.</p>
+        </div>
 
-    <!-- MENU LATERAL -->
-    <aside class="menu">
-      <h2>Conteúdo</h2>
+        <nav class="page-drawer__nav" aria-label="Páginas do site">
+            <ul class="drawer-links" id="drawerLinks"></ul>
+        </nav>
 
-      <button onclick="alternarModo()">Alternar Sumário</button>
-
-      <div id="sumario" class="modo-botao">
-        <a href="#sec1">O que é procrastinação?</a>
-        <a href="#sec2">Causas</a>
-        <a href="#sec3">Consequências</a>
-        <a href="#sec4">Como evitar</a>
-        <a href="#sec5">Conclusão</a>
-      </div>
+        <div class="page-drawer__footer" id="brandFooter">2026</div>
     </aside>
 
-    <!-- CONTEÚDO -->
-    <main class="conteudo">
+    <div class="page-layout">
+        <aside class="page-summary" aria-label="Sumário da página">
+            <div class="summary-card">
+                <p class="summary-kicker">Mapa da página</p>
+                <h2>Sumário</h2>
+                <ul class="summary-links" id="summaryLinks"></ul>
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </aside>
 
-      <div class="card">
+        <main class="main-content">
+            <header class="hero">
+                <p class="hero__eyebrow">Projeto de Desenvolvimento Web</p>
+                <h1>O Que é Procrastinação?</h1>
+                <p class="subtitle">Entenda o problema, reconheça os impactos e comece a recuperar o controle do seu tempo.</p>
+            </header>
 
-        <section id="sec1">
-          <h2>O que é procrastinação?</h2>
-          <p>Procrastinação é o ato de adiar tarefas importantes...</p>
-        </section>
+            <section id="introducao" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1542123491-63f422a5f45e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Livro aberto sobre produtividade">
+                </div>
+                <div class="section-text">
+                    <h2>Introdução</h2>
+                    <p><strong>Procrastinação</strong> é o ato de adiar ou postergar tarefas importantes, substituindo-as por atividades menos urgentes ou mais prazerosas. É um comportamento comum que afeta a maioria das pessoas em algum momento da vida.</p>
+                    <p>Estudos indicam que cerca de <span class="highlight">73% das pessoas</span> procrastinam regularmente, impactando negativamente a produtividade, a saúde mental e o bem-estar geral.</p>
+                </div>
+            </section>
 
-        <section id="sec2">
-          <h2>Causas</h2>
-          <p>Falta de motivação, distrações, ansiedade...</p>
-        </section>
+            <section id="definicao" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Definição Científica</h2>
+                    <p>Do ponto de vista psicológico, a procrastinação não é simplesmente preguiça. Ela é uma <span class="highlight">falha de autorregulação</span> que leva a pessoa a escolher conscientemente algo pior para o longo prazo.</p>
+                    <p>Esse comportamento se relaciona com emoções como ansiedade, medo do fracasso e perfeccionismo. Quando a tarefa parece desconfortável, o cérebro tenta buscar alívio imediato.</p>
+                    <blockquote>
+                        “A procrastinação é a arte de manter-se atualizado com o ontem e evitar o hoje.”
+                        <cite>Wayne Dyer</cite>
+                    </blockquote>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Mesa com relógio e caderno de planejamento">
+                </div>
+            </section>
 
-        <section id="sec3">
-          <h2>Consequências</h2>
-          <p>Baixa produtividade, estresse, perda de prazos...</p>
-        </section>
+            <section id="impactos" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1594107208761-b3176ea01f89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa sobrecarregada com tarefas">
+                </div>
+                <div class="section-text">
+                    <h2>Impactos da Procrastinação</h2>
+                    <ul class="impact-list">
+                        <li><strong>Saúde mental:</strong> aumenta o estresse, a ansiedade e o sentimento de culpa.</li>
+                        <li><strong>Produtividade:</strong> reduz a qualidade do trabalho e favorece atrasos.</li>
+                        <li><strong>Relacionamentos:</strong> afeta compromissos pessoais e profissionais.</li>
+                        <li><strong>Saúde física:</strong> leva ao adiamento de cuidados importantes.</li>
+                        <li><strong>Finanças:</strong> causa multas, esquecimentos e perda de oportunidades.</li>
+                    </ul>
+                    <p>Reconhecer esses impactos é o <span class="highlight">primeiro passo</span> para mudar o comportamento.</p>
+                </div>
+            </section>
 
-        <section id="sec4">
-          <h2>Como evitar</h2>
-          <p>Organização, disciplina, técnicas de foco...</p>
-        </section>
+            <section id="tipos" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Tipos de Procrastinadores</h2>
+                    <div class="types-grid">
+                        <article class="type-card">
+                            <h3>O Perfeccionista</h3>
+                            <p>Adia a tarefa por medo de não executar tudo perfeitamente.</p>
+                        </article>
+                        <article class="type-card">
+                            <h3>O Ansioso</h3>
+                            <p>Evita tarefas que geram desconforto emocional ou insegurança.</p>
+                        </article>
+                        <article class="type-card">
+                            <h3>O Sonhador</h3>
+                            <p>Planeja demais e age de menos, esperando o momento ideal.</p>
+                        </article>
+                        <article class="type-card">
+                            <h3>O Adrenalina</h3>
+                            <p>Depende da pressão do prazo para finalmente começar.</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1597946178676-e3e6dfa5b7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa observando várias tarefas ao redor">
+                </div>
+            </section>
 
-        <section id="sec5">
-          <h2>Conclusão</h2>
-          <p>Evitar procrastinação melhora sua vida...</p>
-        </section>
+            <section id="estatisticas" class="content-section stats-section">
+                <h2>Estatísticas e Dados</h2>
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <span class="stat-number">73%</span>
+                        <p>das pessoas procrastinam com frequência.</p>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-number">20%</span>
+                        <p>são procrastinadores crônicos.</p>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-number">95%</span>
+                        <p>gostariam de reduzir esse hábito.</p>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-number">40%</span>
+                        <p>já tiveram perdas financeiras por adiar decisões.</p>
+                    </article>
+                </div>
+            </section>
 
-      </div>
+            <section class="cta-section">
+                <h2>Pronto para mudar?</h2>
+                <p>Entenda primeiro as causas e depois avance para as soluções práticas.</p>
+                <div class="cta-buttons">
+                    <a href="Public/pages/tela1.html" class="btn btn-primary">Ver as causas</a>
+                    <a href="Public/pages/tela2.html" class="btn btn-secondary">Explorar soluções</a>
+                </div>
+            </section>
+        </main>
+    </div>
 
-    </main>
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
 
-  </div>
-
-  <!-- BOTÃO FIXO (MELHOR JEITO) -->
-  <a href="Public/pages/tela1.html" class="proximo">
-    Ir para próxima tela
-  </a>
-
-  <script src="Public/assets/js/script.js"></script>
+    <script src="Public/assets/js/script.js"></script>
 </body>
 </html>

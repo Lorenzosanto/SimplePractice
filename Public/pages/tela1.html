@@ -1,19 +1,164 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-   
     <meta charset="UTF-8">
-    <title>Início-Procrastinação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causas da Procrastinação</title>
     <link rel="stylesheet" href="../assets/CSS/style.css">
 </head>
-<body>
-    <h1 class="titulo">Bem-vindo ao Nosso Projeto Contra a Procrastinação</h1>
-    <p>Aqui você pode encontrar informações sobre o que é a procrastinação, suas causas e efeitos, além de dicas para superá-la.</p>
-   <p class="rolodetexto">Procrastinação é um comportamento habitual de atrasar tarefas por escolha, frequentemente trocando obrigações por atividades mais agradáveis ou menos desafiadoras, mesmo quando há consciência de que o adiamento gerará problemas ou estresse futuro. Trata-se de uma forma de auto-regulação emocional, ligada à dificuldade de lidar com frustrações ou ansiedade frente a demandas consideradas desagradáveis ou difíceis.</p>
-   
-   
-   
-    <button class="botao"><a href="tela2.html">Ir para a Tela 2</a></button>
-    
+<body data-page="causas" data-root-prefix="../../" data-config="../assets/data/site.json">
+    <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="pageDrawer">
+        <span class="menu-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="menu-toggle__text">Páginas</span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
+
+    <aside class="page-drawer" id="pageDrawer" aria-label="Navegação entre páginas">
+        <div class="page-drawer__brand">
+            <p class="page-drawer__eyebrow">SimplePractice</p>
+            <h2 id="brandTitle">ProcrastiNÃO</h2>
+            <p class="page-drawer__description">Conteúdo sobre procrastinação em HTML5, CSS puro e JavaScript vanilla.</p>
+        </div>
+
+        <nav class="page-drawer__nav" aria-label="Páginas do site">
+            <ul class="drawer-links" id="drawerLinks"></ul>
+        </nav>
+
+        <div class="page-drawer__footer" id="brandFooter">2026</div>
+    </aside>
+
+    <div class="page-layout">
+        <aside class="page-summary" aria-label="Sumário da página">
+            <div class="summary-card">
+                <p class="summary-kicker">Mapa da página</p>
+                <h2>Sumário</h2>
+                <ul class="summary-links" id="summaryLinks"></ul>
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="hero">
+                <p class="hero__eyebrow">Entendimento do problema</p>
+                <h1>Por Que Procrastinamos?</h1>
+                <p class="subtitle">As causas não são só falta de vontade. Elas envolvem medo, emoção e ambiente.</p>
+            </header>
+
+            <section id="medo" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa pensando antes de agir">
+                </div>
+                <div class="section-text">
+                    <h2>Medo do Fracasso</h2>
+                    <p>Uma das principais causas da procrastinação é o <span class="highlight">medo do fracasso</span>. Quando a pessoa acredita que não conseguirá fazer algo bem, ela tende a adiar a tarefa.</p>
+                    <p>Esse medo pode nascer de críticas anteriores, expectativas exageradas ou comparação com outras pessoas.</p>
+                    <div class="info-box">
+                        <h4>Saiba mais</h4>
+                        <p>Pesquisas indicam que muitos procrastinadores relatam o medo de errar como gatilho principal.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="perfeccionismo" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Perfeccionismo</h2>
+                    <p>O <span class="highlight">perfeccionismo</span> gera a ideia de que só vale começar se tudo puder sair impecável. Esse pensamento trava a ação.</p>
+                    <p>Quando o padrão exigido é impossível, o cérebro prefere evitar o desconforto e empurrar a tarefa para depois.</p>
+                    <blockquote>
+                        “A perfeição é inimiga do progresso.”
+                        <cite>Winston Churchill</cite>
+                    </blockquote>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1548104210-6d130801c54a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Mesa organizada de forma extremamente detalhada">
+                </div>
+            </section>
+
+            <section id="motivacao" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1692158962133-6c97ee651ab9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa sem energia diante do computador">
+                </div>
+                <div class="section-text">
+                    <h2>Falta de Motivação</h2>
+                    <p>Quando uma tarefa parece chata, distante ou sem propósito, a <span class="highlight">motivação</span> diminui bastante.</p>
+                    <ul class="impact-list">
+                        <li><strong>Falta de propósito:</strong> a pessoa não enxerga o valor do que precisa fazer.</li>
+                        <li><strong>Recompensa distante:</strong> o benefício vem tarde demais para estimular agora.</li>
+                        <li><strong>Desconexão pessoal:</strong> a tarefa não parece alinhada com os próprios valores.</li>
+                        <li><strong>Sobrecarga mental:</strong> cansaço e exaustão derrubam a energia de ação.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="distracao" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Distrações e Tecnologia</h2>
+                    <p>Vivemos em uma <span class="highlight">era de distrações</span>. Redes sociais, notificações e vídeos curtos disputam atenção o tempo todo.</p>
+                    <p>Como o cérebro prefere recompensas imediatas, esses estímulos se tornam atalhos perfeitos para evitar tarefas difíceis.</p>
+                    <div class="info-box">
+                        <h4>Estatística</h4>
+                        <p>Muitas pessoas verificam o celular dezenas de vezes ao dia, interrompendo o foco repetidamente.</p>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1638459472395-e17f31ab879a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Celular com várias notificações">
+                </div>
+            </section>
+
+            <section id="tarefas" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1605791767308-46f38113f418?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa diante de uma lista longa de tarefas">
+                </div>
+                <div class="section-text">
+                    <h2>Tarefas Complexas</h2>
+                    <p>Quando a tarefa parece <span class="highlight">grande demais ou confusa demais</span>, a pessoa não sabe por onde começar.</p>
+                    <p>A ausência de passos claros gera sensação de sobrecarga e aumenta a tendência de fuga.</p>
+                    <div class="info-box">
+                        <h4>Solução inicial</h4>
+                        <p>Dividir o problema em microetapas ajuda a diminuir a resistência para começar.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cerebro" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Base Neurológica</h2>
+                    <p>A procrastinação também se relaciona ao <span class="highlight">sistema límbico</span>, que busca alívio, prazer imediato e segurança.</p>
+                    <p>Já o córtex pré-frontal é responsável por planejamento, foco e decisão. Quando a pessoa está cansada ou pressionada, esse equilíbrio piora.</p>
+                    <div class="brain-facts">
+                        <h4>Fatos importantes</h4>
+                        <ul>
+                            <li>Decisões racionais exigem energia mental.</li>
+                            <li>Gratificação imediata ativa mais rapidamente o circuito de recompensa.</li>
+                            <li>Estresse e cansaço reduzem a capacidade de autorregulação.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1531323386183-43890b5c766d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Ilustração de cérebro e tomada de decisão">
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Agora que você conhece as causas...</h2>
+                <p>O próximo passo é aprender técnicas que ajudam a agir apesar da resistência.</p>
+                <div class="cta-buttons">
+                    <a href="tela2.html" class="btn btn-primary">Ver soluções</a>
+                    <a href="../../index.html" class="btn btn-secondary">Voltar ao início</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

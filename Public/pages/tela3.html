@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ação - Comece Agora</title>
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+</head>
+<body data-page="acao" data-root-prefix="../../" data-config="../assets/data/site.json">
+    <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="pageDrawer">
+        <span class="menu-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="menu-toggle__text">Páginas</span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
+
+    <aside class="page-drawer" id="pageDrawer" aria-label="Navegação entre páginas">
+        <div class="page-drawer__brand">
+            <p class="page-drawer__eyebrow">SimplePractice</p>
+            <h2 id="brandTitle">ProcrastiNÃO</h2>
+            <p class="page-drawer__description">Conteúdo sobre procrastinação em HTML5, CSS puro e JavaScript vanilla.</p>
+        </div>
+
+        <nav class="page-drawer__nav" aria-label="Páginas do site">
+            <ul class="drawer-links" id="drawerLinks"></ul>
+        </nav>
+
+        <div class="page-drawer__footer" id="brandFooter">2026</div>
+    </aside>
+
+    <div class="page-layout">
+        <aside class="page-summary" aria-label="Sumário da página">
+            <div class="summary-card">
+                <p class="summary-kicker">Mapa da página</p>
+                <h2>Sumário</h2>
+                <ul class="summary-links" id="summaryLinks"></ul>
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="hero">
+                <p class="hero__eyebrow">Aplicação prática</p>
+                <h1>Hora de Agir</h1>
+                <p class="subtitle">Conhecimento sem ação continua sendo adiamento. Aqui a proposta é transformar intenção em movimento.</p>
+            </header>
+
+            <section id="primeiro-passo" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1741325649595-12f79239d477?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa iniciando uma tarefa imediatamente">
+                </div>
+                <div class="section-text">
+                    <h2>O Primeiro Passo</h2>
+                    <p>A <span class="highlight">procrastinação de vencer a procrastinação</span> é comum. A pessoa planeja tanto a mudança que adia a própria mudança.</p>
+                    <p>O melhor momento para começar não é segunda-feira nem o começo do mês. É agora, com um passo pequeno e concreto.</p>
+                    <div class="action-box">
+                        <h4>Sua primeira ação</h4>
+                        <p>Escolha uma tarefa que você vem adiando e trabalhe nela por 5 minutos hoje.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="plano" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Crie Seu Plano</h2>
+                    <p>Um <span class="highlight">plano claro</span> reduz ambiguidade. Quando você sabe o que fazer, quando fazer e como começar, a resistência diminui.</p>
+                    <div class="plan-template">
+                        <h4>Template rápido</h4>
+                        <ol>
+                            <li><strong>Identifique:</strong> qual tarefa está sendo adiada?</li>
+                            <li><strong>Divida:</strong> quais são os passos menores?</li>
+                            <li><strong>Agende:</strong> em que horário isso vai acontecer?</li>
+                            <li><strong>Prepare:</strong> o que precisa ficar pronto antes?</li>
+                            <li><strong>Compartilhe:</strong> quem pode acompanhar sua execução?</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1770250959829-de36726e99c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Planejamento escrito em um caderno">
+                </div>
+            </section>
+
+            <section id="checklist" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1618068656845-fa244b9f8bd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Checklist diário de tarefas">
+                </div>
+                <div class="section-text">
+                    <h2>Checklist Diário</h2>
+                    <p>Um <span class="highlight">checklist simples</span> ajuda a manter constância sem depender de motivação alta todos os dias.</p>
+                    <div class="daily-checklist">
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span>Definir 3 prioridades do dia.</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span>Começar pela tarefa que exige mais energia.</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span>Concluir pelo menos 4 blocos de foco.</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span>Reduzir o uso de redes sociais no horário de estudo.</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span>Revisar o que avançou no fim do dia.</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox">
+                            <span>Reconhecer pelo menos uma pequena vitória.</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section id="apps" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Ferramentas Úteis</h2>
+                    <p>A tecnologia pode atrapalhar, mas também pode funcionar como <span class="highlight">aliada</span> quando é usada com intenção.</p>
+                    <div class="tools-list">
+                        <article class="tool-item">
+                            <h4>Timers de foco</h4>
+                            <p>Pomofocus, Forest e Focus To-Do ajudam a marcar blocos de trabalho.</p>
+                        </article>
+                        <article class="tool-item">
+                            <h4>Gestão de tarefas</h4>
+                            <p>Todoist, Notion, Trello ou listas simples com prioridade bem definida.</p>
+                        </article>
+                        <article class="tool-item">
+                            <h4>Bloqueadores</h4>
+                            <p>Freedom, Cold Turkey e extensões que limitam sites distraidores.</p>
+                        </article>
+                        <article class="tool-item">
+                            <h4>Rastreamento</h4>
+                            <p>Ferramentas de tempo ajudam a perceber onde a atenção está vazando.</p>
+                        </article>
+                    </div>
+                    <p class="note">Ferramentas ajudam, mas não substituem decisão, rotina e repetição.</p>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Ferramentas digitais em uma mesa de trabalho">
+                </div>
+            </section>
+
+            <section id="mindset" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1771792329947-781a4bc82835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa com postura de foco e confiança">
+                </div>
+                <div class="section-text">
+                    <h2>Mindset de Crescimento</h2>
+                    <p>Em vez de repetir “eu sou procrastinador”, vale adotar a lógica de que você <span class="highlight">está aprendendo a agir melhor</span>.</p>
+                    <blockquote>
+                        “O melhor momento para plantar uma árvore foi há 20 anos. O segundo melhor momento é agora.”
+                        <cite>Provérbio chinês</cite>
+                    </blockquote>
+                    <div class="mindset-tips">
+                        <h4>Trocas de mentalidade</h4>
+                        <ul>
+                            <li>“Eu sou procrastinador” → “Estou melhorando minha gestão de tempo”.</li>
+                            <li>“Precisa sair perfeito” → “Feito é melhor que perfeito”.</li>
+                            <li>“Não tenho tempo” → “Como posso priorizar isso?”.</li>
+                            <li>“Começo amanhã” → “Vou fazer 5 minutos agora”.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recaidas" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Lidando com Recaídas</h2>
+                    <p>Recaídas acontecem. O ponto não é nunca falhar, e sim <span class="highlight">voltar rápido ao caminho</span> sem transformar um erro em abandono total.</p>
+                    <div class="recovery-steps">
+                        <h4>Quando voltar a adiar</h4>
+                        <ol>
+                            <li><strong>Aceite sem drama:</strong> culpa excessiva só aumenta a paralisia.</li>
+                            <li><strong>Observe o gatilho:</strong> o que fez você escapar da tarefa?</li>
+                            <li><strong>Ajuste o método:</strong> o plano estava grande demais? vago demais?</li>
+                            <li><strong>Recomece logo:</strong> não espere o momento perfeito para retomar.</li>
+                        </ol>
+                    </div>
+                    <p>Mudança de comportamento é processo. Cada tentativa bem analisada melhora a próxima.</p>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1542123491-63f422a5f45e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa persistindo após dificuldades">
+                </div>
+            </section>
+
+            <section id="compromisso" class="content-section commitment-section">
+                <h2>Seu Compromisso</h2>
+                <div class="commitment-card">
+                    <p class="commitment-text">“Eu me comprometo a dar o primeiro passo hoje. Vou agir por alguns minutos em uma tarefa que tenho adiado, mesmo sem vontade perfeita.”</p>
+                    <div class="commitment-signature">
+                        <p><strong>Qual será sua primeira tarefa?</strong></p>
+                        <div class="commitment-input">
+                            <input type="text" placeholder="Escreva aqui a tarefa que você vai iniciar..." id="taskInput">
+                        </div>
+                        <button class="btn btn-primary" id="commitBtn" type="button">Registrar compromisso</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="final-message">
+                <h2>Lembre-se</h2>
+                <div class="message-box">
+                    <p class="big-message">Você não precisa fazer tudo hoje. Você só precisa começar certo hoje.</p>
+                    <p class="sub-message">Pequenos passos repetidos valem mais do que grandes planos adiados.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="../../index.html" class="btn btn-primary">Voltar ao início</a>
+                    <a href="tela2.html" class="btn btn-secondary">Revisar soluções</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

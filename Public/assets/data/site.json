@@ -1,0 +1,29 @@
+{
+    "brand": {
+        "title": "ProcrastiNÃO",
+        "description": "Conteúdo sobre procrastinação em HTML5, CSS puro e JavaScript vanilla.",
+        "footer": "SimplePractice · 2026"
+    },
+    "pages": [
+        {
+            "id": "inicio",
+            "label": "Início",
+            "path": "index.html"
+        },
+        {
+            "id": "causas",
+            "label": "Causas",
+            "path": "Public/pages/tela1.html"
+        },
+        {
+            "id": "solucoes",
+            "label": "Soluções",
+            "path": "Public/pages/tela2.html"
+        },
+        {
+            "id": "acao",
+            "label": "Ação",
+            "path": "Public/pages/tela3.html"
+        }
+    ]
+}

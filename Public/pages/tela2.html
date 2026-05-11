@@ -1,30 +1,205 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Formulário-Procrastinação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções para Procrastinação</title>
     <link rel="stylesheet" href="../assets/CSS/style.css">
 </head>
-<body>
-    <h1 class="titulo">Informações Pessoais</h1>
-    
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required maxlength="60">
-        <br><br>
-        
-        <label for="ddn">Data de Nascimento:</label>
-        <input type="date" id="ddn" name="ddn" required>
-        <br><br>
-        
-        <label for="acordar">Hora que acorda:</label>
-        <input type="time" id="acordar" name="acordar" required>
-        <br><br>
-        
-        <button type="submit">Enviar</button>
-    </form>
+<body data-page="solucoes" data-root-prefix="../../" data-config="../assets/data/site.json">
+    <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="pageDrawer">
+        <span class="menu-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="menu-toggle__text">Páginas</span>
+    </button>
 
-        <button><a href="tela3.html">Ir para a Tela 3</a></button>
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
 
+    <aside class="page-drawer" id="pageDrawer" aria-label="Navegação entre páginas">
+        <div class="page-drawer__brand">
+            <p class="page-drawer__eyebrow">SimplePractice</p>
+            <h2 id="brandTitle">ProcrastiNÃO</h2>
+            <p class="page-drawer__description">Conteúdo sobre procrastinação em HTML5, CSS puro e JavaScript vanilla.</p>
+        </div>
+
+        <nav class="page-drawer__nav" aria-label="Páginas do site">
+            <ul class="drawer-links" id="drawerLinks"></ul>
+        </nav>
+
+        <div class="page-drawer__footer" id="brandFooter">2026</div>
+    </aside>
+
+    <div class="page-layout">
+        <aside class="page-summary" aria-label="Sumário da página">
+            <div class="summary-card">
+                <p class="summary-kicker">Mapa da página</p>
+                <h2>Sumário</h2>
+                <ul class="summary-links" id="summaryLinks"></ul>
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="hero">
+                <p class="hero__eyebrow">Parte prática</p>
+                <h1>Como Vencer a Procrastinação</h1>
+                <p class="subtitle">Técnicas simples funcionam melhor quando reduzem fricção e facilitam o início.</p>
+            </header>
+
+            <section id="pomodoro" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1692158962119-8103c7d78c86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Relógio marcando tempo de foco">
+                </div>
+                <div class="section-text">
+                    <h2>Técnica Pomodoro</h2>
+                    <p>A <span class="highlight">Técnica Pomodoro</span> ajuda a manter foco por blocos curtos e reduz a sensação de tarefa infinita.</p>
+                    <div class="technique-steps">
+                        <h4>Como funciona</h4>
+                        <ol>
+                            <li>Trabalhe por 25 minutos com foco total.</li>
+                            <li>Faça uma pausa de 5 minutos.</li>
+                            <li>Repita o ciclo 4 vezes.</li>
+                            <li>Depois faça uma pausa maior de 15 a 30 minutos.</li>
+                        </ol>
+                    </div>
+                    <p>Quando o tempo é pequeno e claro, começar fica menos assustador.</p>
+                </div>
+            </section>
+
+            <section id="dois-minutos" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Regra dos 2 Minutos</h2>
+                    <p>A <span class="highlight">regra dos 2 minutos</span> diz que, se algo leva menos de 2 minutos, o ideal é fazer na hora.</p>
+                    <p>Para tarefas grandes, a lógica pode ser adaptada: comprometa-se a agir só por 2 minutos. Muitas vezes o mais difícil é apenas iniciar.</p>
+                    <div class="info-box">
+                        <h4>Benefício</h4>
+                        <p>Ela derruba a barreira mental do começo e cria embalo para continuar.</p>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1590140297846-fa479ed30a6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pessoa iniciando uma tarefa">
+                </div>
+            </section>
+
+            <section id="eisenhower" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1765867967050-30db3e7a3be8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Planejamento e organização de tarefas">
+                </div>
+                <div class="section-text">
+                    <h2>Matriz de Eisenhower</h2>
+                    <p>A <span class="highlight">Matriz de Eisenhower</span> ajuda a separar urgência de importância.</p>
+                    <div class="eisenhower-matrix">
+                        <div class="matrix-quadrant urgent-important">
+                            <h4>Urgente e importante</h4>
+                            <p>Faça imediatamente.</p>
+                        </div>
+                        <div class="matrix-quadrant important-not-urgent">
+                            <h4>Importante, não urgente</h4>
+                            <p>Agende com antecedência.</p>
+                        </div>
+                        <div class="matrix-quadrant urgent-not-important">
+                            <h4>Urgente, não importante</h4>
+                            <p>Delegue quando possível.</p>
+                        </div>
+                        <div class="matrix-quadrant not-urgent-not-important">
+                            <h4>Nem urgente nem importante</h4>
+                            <p>Reduza ou elimine.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ambiente" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Otimize Seu Ambiente</h2>
+                    <p>O ambiente influencia muito a capacidade de concentração. Ajustes simples já melhoram a chance de entrar em ação.</p>
+                    <ul class="impact-list">
+                        <li><strong>Elimine distrações:</strong> reduza notificações e deixe o celular longe.</li>
+                        <li><strong>Organize o espaço:</strong> menos bagunça reduz atrito mental.</li>
+                        <li><strong>Melhore a iluminação:</strong> luz boa ajuda a manter energia.</li>
+                        <li><strong>Escolha o som certo:</strong> música instrumental ou ruído branco podem ajudar.</li>
+                        <li><strong>Crie um ritual:</strong> sempre começar do mesmo jeito facilita o hábito.</li>
+                    </ul>
+                    <div class="info-box">
+                        <h4>Dica</h4>
+                        <p>Um ambiente preparado comunica ao cérebro que é hora de focar.</p>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1597946178676-e3e6dfa5b7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Mesa de estudos organizada">
+                </div>
+            </section>
+
+            <section id="habitos" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1758518731027-78a22c8852ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Construção de rotina e hábitos">
+                </div>
+                <div class="section-text">
+                    <h2>Construção de Hábitos</h2>
+                    <p>Transformar ação em repetição reduz o peso da motivação. Bons hábitos diminuem a necessidade de força de vontade o tempo todo.</p>
+                    <div class="habit-framework">
+                        <h4>As 4 leis da mudança de comportamento</h4>
+                        <div class="habit-law"><strong>Torne óbvio:</strong> deixe pistas visuais do que precisa ser feito.</div>
+                        <div class="habit-law"><strong>Torne atraente:</strong> associe a tarefa a algo agradável.</div>
+                        <div class="habit-law"><strong>Torne fácil:</strong> reduza a fricção para começar.</div>
+                        <div class="habit-law"><strong>Torne satisfatório:</strong> reconheça a conclusão com alguma recompensa.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recompensas" class="content-section reverse">
+                <div class="section-text">
+                    <h2>Sistema de Recompensas</h2>
+                    <p>Criar um <span class="highlight">sistema de recompensas</span> ajuda o cérebro a associar esforço com retorno positivo.</p>
+                    <div class="rewards-examples">
+                        <h4>Exemplos</h4>
+                        <ul>
+                            <li>Um café especial após concluir uma tarefa importante.</li>
+                            <li>15 minutos de lazer depois de um bloco de foco.</li>
+                            <li>Um episódio de série ao finalizar uma etapa maior.</li>
+                            <li>Uma compra planejada ao bater uma meta relevante.</li>
+                        </ul>
+                    </div>
+                    <p>A regra principal é simples: a recompensa vem <strong>depois</strong> da ação.</p>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1769028866840-14b25805a119?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Pequena celebração após uma conquista">
+                </div>
+            </section>
+
+            <section id="accountability" class="content-section">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1775172990682-8ce567219704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Duas pessoas acompanhando metas juntas">
+                </div>
+                <div class="section-text">
+                    <h2>Parceiros de Accountability</h2>
+                    <p>Compartilhar metas com alguém de confiança cria <span class="highlight">pressão social positiva</span> e aumenta o compromisso com a tarefa.</p>
+                    <p>Quando a meta deixa de ser só interna, a chance de execução costuma crescer.</p>
+                    <div class="info-box">
+                        <h4>Como aplicar</h4>
+                        <p>Combine check-ins rápidos com alguém para revisar progresso, obstáculos e próximos passos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Pronto para colocar em prática?</h2>
+                <p>Agora a ideia é transformar essas técnicas em um plano de ação simples e executável.</p>
+                <div class="cta-buttons">
+                    <a href="tela3.html" class="btn btn-primary">Ir para a ação</a>
+                    <a href="tela1.html" class="btn btn-secondary">Revisar as causas</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
