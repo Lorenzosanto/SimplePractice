@@ -6,26 +6,247 @@
     <title>Soluções para Procrastinação</title>
     <link rel="stylesheet" href="../assets/CSS/style.css">
 </head>
-<body>
-    <h1 class="titulo">Informações Pessoais</h1>
-    
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required maxlength="60">
-        <br><br>
-        
-        <label for="ddn">Data de Nascimento:</label>
-        <input type="date" id="ddn" name="ddn" required>
-        <br><br>
-        
-        <label for="acordar">Hora que acorda:</label>
-        <input type="time" id="acordar" name="acordar" required>
-        <br><br>
-        
-        <button type="submit">Enviar</button>
-    </form>
+<body data-page="solucoes" data-root-prefix="../../" data-config="../assets/data/site.json">
+    <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="pageDrawer">
+        <span class="menu-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="menu-toggle__text">Páginas</span>
+    </button>
 
-        <button><a href="tela3.html">Ir para a Tela 3</a></button>
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
 
+    <aside class="page-drawer" id="pageDrawer" aria-label="Navegação entre páginas">
+        <div class="page-drawer__brand">
+            <p class="page-drawer__eyebrow">SimplePractice</p>
+            <h2 id="brandTitle">Procrastinação</h2>
+            <p class="page-drawer__description">Projeto educativo feito em grupo</p>
+        </div>
+
+        <nav class="page-drawer__nav" aria-label="Páginas do site">
+            <ul class="drawer-links" id="drawerLinks"></ul>
+        </nav>
+
+        <div class="page-drawer__footer" id="brandFooter">2026</div>
+    </aside>
+
+    <div class="page-layout">
+        <aside class="page-summary" aria-label="Sumário da página">
+            <div class="summary-card">
+                <p class="summary-kicker">Mapa da página</p>
+                <h2>Sumário</h2>
+                <ul class="summary-links" id="summaryLinks">
+                    <li><a href="#pomodoro">Técnica Pomodoro</a></li>
+                    <li><a href="#2minutos">Regra dos 2 Minutos</a></li>
+                    <li><a href="#lista">Matriz de Eisenhower</a></li>
+                    <li><a href="#ambiente">Otimize Seu Ambiente</a></li>
+                    <li><a href="#habitos">Construção de Hábitos</a></li>
+                    <li><a href="#recompensas">Sistema de Recompensas</a></li>
+                    <li><a href="#accountability">Parceiros de Accountability</a></li>
+                </ul>
+                <div class="progress-indicator">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="hero">
+                <h1>Como Vencer a Procrastinação</h1>
+                <p class="subtitle">Técnicas comprovadas para aumentar sua produtividade</p>
+            </header>
+
+        <section id="pomodoro" class="content-section">
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1692158962119-8103c7d78c86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Técnica Pomodoro">
+            </div>
+            <div class="section-text">
+                <h2>Técnica Pomodoro</h2>
+                <p>
+                    A <span class="highlight">Técnica Pomodoro</span> é um dos métodos mais eficazes
+                    para manter o foco e vencer a procrastinação.
+                </p>
+                <div class="technique-steps">
+                    <h4>Como funciona:</h4>
+                    <ol>
+                        <li>🍅 Trabalhe por 25 minutos com foco total</li>
+                        <li>☕ Faça uma pausa de 5 minutos</li>
+                        <li>🔁 Repita o ciclo 4 vezes</li>
+                        <li>🌟 Faça uma pausa maior de 15-30 minutos</li>
+                    </ol>
+                </div>
+                <p>
+                    Essa técnica funciona porque torna o trabalho menos assustador - qualquer um pode
+                    se concentrar por apenas 25 minutos!
+                </p>
+            </div>
+        </section>
+
+        <section id="2minutos" class="content-section reverse">
+            <div class="section-text">
+                <h2>Regra dos 2 Minutos</h2>
+                <p>
+                    David Allen, autor de "Getting Things Done", propõe a <span class="highlight">Regra dos 2 Minutos</span>:
+                    se algo leva menos de 2 minutos para fazer, faça imediatamente.
+                </p>
+                <p>
+                    Para tarefas maiores, comprometa-se a trabalhar apenas 2 minutos. Geralmente, o mais
+                    difícil é começar - uma vez iniciado, você provavelmente continuará.
+                </p>
+                <div class="info-box">
+                    <h4>✨ Benefício</h4>
+                    <p>Elimina a barreira mental de começar e cria momentum positivo.</p>
+                </div>
+            </div>
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1590140297846-fa479ed30a6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Comece Agora">
+            </div>
+        </section>
+
+        <section id="lista" class="content-section">
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1765867967050-30db3e7a3be8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Lista de Tarefas">
+            </div>
+            <div class="section-text">
+                <h2>Matriz de Eisenhower</h2>
+                <p>
+                    Organize suas tarefas usando a <span class="highlight">Matriz de Eisenhower</span>,
+                    classificando-as por urgência e importância:
+                </p>
+                <div class="eisenhower-matrix">
+                    <div class="matrix-quadrant urgent-important">
+                        <h4>🔴 Urgente e Importante</h4>
+                        <p>Faça IMEDIATAMENTE</p>
+                    </div>
+                    <div class="matrix-quadrant important-not-urgent">
+                        <h4>🟢 Importante, Não Urgente</h4>
+                        <p>AGENDE um tempo</p>
+                    </div>
+                    <div class="matrix-quadrant urgent-not-important">
+                        <h4>🟡 Urgente, Não Importante</h4>
+                        <p>DELEGUE se possível</p>
+                    </div>
+                    <div class="matrix-quadrant not-urgent-not-important">
+                        <h4>⚪ Não Urgente, Não Importante</h4>
+                        <p>ELIMINE da lista</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ambiente" class="content-section reverse">
+            <div class="section-text">
+                <h2>Otimize Seu Ambiente</h2>
+                <p>
+                    O <span class="highlight">ambiente</span> influencia enormemente nossa capacidade
+                    de concentração e produtividade.
+                </p>
+                <ul class="impact-list">
+                    <li><strong>Elimine distrações:</strong> Desligue notificações, guarde o celular</li>
+                    <li><strong>Organize o espaço:</strong> Mesa limpa, materiais acessíveis</li>
+                    <li><strong>Controle a iluminação:</strong> Luz natural aumenta foco</li>
+                    <li><strong>Use música:</strong> Sons ambientes ou música instrumental</li>
+                    <li><strong>Temperatura ideal:</strong> Entre 20-22°C para máxima produtividade</li>
+                </ul>
+                <div class="info-box">
+                    <h4>🎧 Dica</h4>
+                    <p>Sons binaurais e música clássica podem aumentar concentração em até 25%!</p>
+                </div>
+            </div>
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1597946178676-e3e6dfa5b7f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Ambiente Produtivo">
+            </div>
+        </section>
+
+        <section id="habitos" class="content-section">
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1758518731027-78a22c8852ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Construindo Hábitos">
+            </div>
+            <div class="section-text">
+                <h2>Construção de Hábitos</h2>
+                <p>
+                    James Clear, em "Hábitos Atômicos", propõe estratégias para <span class="highlight">
+                    transformar comportamentos</span> em hábitos automáticos.
+                </p>
+                <div class="habit-framework">
+                    <h4>As 4 Leis da Mudança de Comportamento:</h4>
+                    <div class="habit-law">
+                        <strong>1️⃣ Torne óbvio:</strong> Deixe pistas visuais do que precisa fazer
+                    </div>
+                    <div class="habit-law">
+                        <strong>2️⃣ Torne atraente:</strong> Associe a tarefa com algo prazeroso
+                    </div>
+                    <div class="habit-law">
+                        <strong>3️⃣ Torne fácil:</strong> Reduza a fricção para começar
+                    </div>
+                    <div class="habit-law">
+                        <strong>4️⃣ Torne satisfatório:</strong> Recompense-se após completar
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recompensas" class="content-section reverse">
+            <div class="section-text">
+                <h2>Sistema de Recompensas</h2>
+                <p>
+                    Crie um <span class="highlight">sistema de recompensas</span> para motivar-se a
+                    completar tarefas. O cérebro responde positivamente a recompensas.
+                </p>
+                <div class="rewards-examples">
+                    <h4>Exemplos de recompensas:</h4>
+                    <ul>
+                        <li>☕ Um café especial após completar uma tarefa importante</li>
+                        <li>🎮 15 minutos de jogo após 2 horas de trabalho focado</li>
+                        <li>🍿 Assistir um episódio de série após terminar um projeto</li>
+                        <li>🎁 Comprar algo desejado ao atingir uma meta grande</li>
+                    </ul>
+                </div>
+                <p>
+                    O importante é que a recompensa seja proporcional ao esforço e venha DEPOIS da conclusão.
+                </p>
+            </div>
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1769028866840-14b25805a119?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Recompensas">
+            </div>
+        </section>
+
+        <section id="accountability" class="content-section">
+            <div class="section-image">
+                <img src="https://images.unsplash.com/photo-1775172990682-8ce567219704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Parceiros de Accountability">
+            </div>
+            <div class="section-text">
+                <h2>Parceiros de Accountability</h2>
+                <p>
+                    Compartilhe suas metas com alguém de confiança. A <span class="highlight">pressão social positiva</span>
+                    é um motivador poderoso.
+                </p>
+                <p>
+                    Estudos mostram que você tem 65% mais chances de atingir uma meta quando se compromete
+                    com alguém. Se agendar encontros regulares de progresso, essa chance sobe para 95%!
+                </p>
+                <div class="info-box">
+                    <h4>🤝 Como fazer</h4>
+                    <p>Encontre um "accountability partner" e façam check-ins semanais sobre suas metas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Pronto para Colocar em Prática?</h2>
+            <p>Descubra como dar o primeiro passo hoje mesmo</p>
+            <div class="cta-buttons">
+                <a href="tela3.html" class="btn btn-primary">Começar Agora</a>
+                <a href="tela1.html" class="btn btn-secondary">Ver Causas</a>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
