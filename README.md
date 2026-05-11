@@ -45,22 +45,22 @@ O projeto possui:
 # 📂 Estrutura do Projeto
 
 ```bash
-SimplePractice/
-│
-├── index.html
-│
+SIMPLEPRACTICE/
+├── .vscode/
+│   └── launch.json
 ├── Public/
 │   ├── assets/
 │   │   ├── CSS/
 │   │   │   └── style.css
-│   │   │
-│   │   ├── js/
-│   │   │   └── script.js
-│   │   │
-│   │   └── data/
-│   │       └── site.json
-│   │
+│   │   ├── data/
+│   │   │   └── site.json
+│   │   └── js/
+│   │       └── script.js
 │   └── pages/
 │       ├── tela1.html
 │       ├── tela2.html
 │       └── tela3.html
+├── .gitignore
+├── index.html
+├── LICENSE
+└── README.md
