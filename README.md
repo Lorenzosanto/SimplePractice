@@ -13,6 +13,8 @@ O principal objetivo foi desenvolver um site funcional, organizado e responsivo 
 - HTML5 semântico
 - CSS3 puro
 - JavaScript Vanilla
+- PHP puro
+- Banco de dados MySQL/MariaDB
 - Estrutura modular de arquivos
 - Navegação dinâmica entre páginas
 
@@ -37,8 +39,31 @@ O projeto possui:
 ✅ Barra de progresso de leitura  
 ✅ Scroll suave entre seções  
 ✅ Interações em JavaScript  
+✅ Registro de compromissos com PHP
+✅ Consulta de dados salvos no MySQL/MariaDB
 ✅ Estrutura organizada por páginas  
 ✅ Conteúdo educativo e motivacional  
+
+---
+
+# 🗄️ Como rodar com PHP e banco de dados
+
+1. Crie o banco importando o arquivo `database.sql` no MySQL/MariaDB.
+2. Confira usuário e senha em `api/config.php`.
+3. Rode o projeto com servidor PHP:
+
+```bash
+php -S localhost:8080
+```
+
+4. Acesse:
+
+```bash
+http://localhost:8080
+```
+
+O formulário da página `Ação` grava a tarefa na tabela `compromissos`.
+A página `Public/pages/compromissos.php` lista os registros salvos.
 
 ---
 
@@ -59,8 +84,14 @@ SIMPLEPRACTICE/
 │   └── pages/
 │       ├── tela1.html
 │       ├── tela2.html
-│       └── tela3.html
+│       ├── tela3.html
+│       └── compromissos.php
+├── api/
+│   ├── compromissos.php
+│   ├── config.php
+│   └── database.php
 ├── .gitignore
+├── database.sql
 ├── index.html
 ├── LICENSE
 └── README.md

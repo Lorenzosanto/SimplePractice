@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS simplepractice
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE simplepractice;
+
+CREATE TABLE IF NOT EXISTS compromissos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tarefa VARCHAR(255) NOT NULL,
+    data_criacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

@@ -763,6 +763,47 @@ blockquote cite {
     margin-top: 1rem;
 }
 
+#commitBtn:disabled {
+    cursor: wait;
+    opacity: 0.72;
+}
+
+.commitments-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.commitments-table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+}
+
+.commitments-table th,
+.commitments-table td {
+    padding: 0.95rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+.commitments-table th {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+}
+
+.commitments-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.commitments-table td:first-child {
+    width: 5rem;
+    font-weight: 800;
+    color: var(--brand);
+}
+
 .final-message {
     padding: 1.7rem;
 }

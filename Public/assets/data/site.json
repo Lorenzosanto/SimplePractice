@@ -24,6 +24,11 @@
             "id": "acao",
             "label": "Ação",
             "path": "Public/pages/tela3.html"
+        },
+        {
+            "id": "compromissos",
+            "label": "Compromissos",
+            "path": "Public/pages/compromissos.php"
         }
     ]
 }

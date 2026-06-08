@@ -8,7 +8,8 @@ const fallbackSiteConfig = {
         { id: "inicio", label: "Início", path: "index.html" },
         { id: "causas", label: "Causas", path: "Public/pages/tela1.html" },
         { id: "solucoes", label: "Soluções", path: "Public/pages/tela2.html" },
-        { id: "acao", label: "Ação", path: "Public/pages/tela3.html" }
+        { id: "acao", label: "Ação", path: "Public/pages/tela3.html" },
+        { id: "compromissos", label: "Compromissos", path: "Public/pages/compromissos.php" }
     ]
 };
 
@@ -254,12 +255,13 @@ function setupChecklist() {
 function setupCommitmentForm() {
     const commitButton = document.getElementById("commitBtn");
     const taskInput = document.getElementById("taskInput");
+    const rootPrefix = document.body.dataset.rootPrefix || "";
 
     if (!commitButton || !taskInput) {
         return;
     }
 
-    const submitCommitment = () => {
+    const submitCommitment = async () => {
         const taskValue = taskInput.value.trim();
 
         if (taskValue === "") {
@@ -268,8 +270,31 @@ function setupCommitmentForm() {
             return;
         }
 
-        showToast("success", "Compromisso registrado", `Primeiro passo definido: ${taskValue}. Agora comece por alguns minutos.`);
-        taskInput.value = "";
+        const formData = new FormData();
+        formData.append("task", taskValue);
+
+        commitButton.disabled = true;
+        commitButton.textContent = "Registrando...";
+
+        try {
+            const response = await fetch(`${rootPrefix}api/compromissos.php`, {
+                method: "POST",
+                body: formData
+            });
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || "Não foi possível registrar o compromisso.");
+            }
+
+            showToast("success", "Compromisso registrado", `Primeiro passo salvo no banco: ${taskValue}.`);
+            taskInput.value = "";
+        } catch (error) {
+            showToast("warning", "Erro ao salvar", "Abra o projeto pelo servidor PHP e confira a conexão com o banco.");
+        } finally {
+            commitButton.disabled = false;
+            commitButton.textContent = "Registrar compromisso";
+        }
     };
 
     commitButton.addEventListener("click", submitCommitment);
