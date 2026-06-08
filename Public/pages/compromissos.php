@@ -99,6 +99,7 @@ function formatDateTime(string $value): string
                                     <th>ID</th>
                                     <th>Tarefa</th>
                                     <th>Data</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,6 +108,10 @@ function formatDateTime(string $value): string
                                         <td><?= (int) $commitment["id"] ?></td>
                                         <td><?= htmlspecialchars($commitment["tarefa"], ENT_QUOTES, "UTF-8") ?></td>
                                         <td><?= htmlspecialchars(formatDateTime($commitment["data_criacao"]), ENT_QUOTES, "UTF-8") ?></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary edit-commitment" data-id="<?= (int) $commitment["id"] ?>">Editar</button>
+                                            <button type="button" class="btn btn-danger delete-commitment" data-id="<?= (int) $commitment["id"] ?>">Excluir</button>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

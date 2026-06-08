@@ -286,9 +286,14 @@ function setupCommitmentForm() {
             if (!response.ok || !result.success) {
                 throw new Error(result.message || "Não foi possível registrar o compromisso.");
             }
-
             showToast("success", "Compromisso registrado", `Primeiro passo salvo no banco: ${taskValue}.`);
             taskInput.value = "";
+
+            // If on the commitments page, refresh or remove/add items via network
+            if (document.querySelector('.commitments-table')) {
+                // reload the page to reflect the new record (simpler for server-rendered table)
+                window.location.reload();
+            }
         } catch (error) {
             showToast("warning", "Erro ao salvar", "Abra o projeto pelo servidor PHP e confira a conexão com o banco.");
         } finally {
@@ -306,6 +311,89 @@ function setupCommitmentForm() {
         }
     });
 }
+
+// Delegate delete button clicks for commitments table
+document.addEventListener('click', async (event) => {
+    const btn = event.target.closest('.delete-commitment');
+
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+
+    if (!id || !confirm('Confirmar exclusão deste compromisso?')) {
+        return;
+    }
+
+    try {
+        btn.disabled = true;
+
+        const response = await fetch(`${(document.body.dataset.rootPrefix || '')}api/compromissos.php`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `id=${encodeURIComponent(id)}`
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(result.message || 'Não foi possível excluir.');
+        }
+
+        showToast('success', 'Excluído', 'Compromisso removido do banco.');
+
+        // Remove the row from the table
+        const row = btn.closest('tr');
+        if (row) row.remove();
+    } catch (err) {
+        showToast('warning', 'Erro', 'Não foi possível excluir o compromisso.');
+        btn.disabled = false;
+    }
+});
+
+// Edit commitment handler
+document.addEventListener('click', async (event) => {
+    const btn = event.target.closest('.edit-commitment');
+
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+    const row = btn.closest('tr');
+    const taskCell = row ? row.querySelectorAll('td')[1] : null;
+    const current = taskCell ? taskCell.textContent.trim() : '';
+
+    const newTask = prompt('Editar tarefa:', current);
+
+    if (newTask === null) return; // cancel
+
+    const trimmed = newTask.trim();
+    if (trimmed === '') {
+        showToast('warning', 'Tarefa vazia', 'A tarefa não pode ficar vazia.');
+        return;
+    }
+
+    try {
+        btn.disabled = true;
+
+        const response = await fetch(`${(document.body.dataset.rootPrefix || '')}api/compromissos.php`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `id=${encodeURIComponent(id)}&task=${encodeURIComponent(trimmed)}`
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(result.message || 'Não foi possível atualizar.');
+        }
+
+        showToast('success', 'Atualizado', 'Compromisso atualizado com sucesso.');
+
+        if (taskCell) taskCell.textContent = trimmed;
+    } catch (err) {
+        showToast('warning', 'Erro', 'Não foi possível atualizar o compromisso.');
+        btn.disabled = false;
+    }
+});
 
 function showToast(tone, title, message) {
     const toastStack = document.getElementById("toastStack");
